@@ -1,4 +1,4 @@
-### ComputerOrganization---MIPS
+# ComputerOrganization---MIPS
 NTUT - Class - HomeWork
 
 如果想要執行 MIPS 要先去此 http://courses.missouristate.edu/kenvollmar/mars/ 
@@ -10,7 +10,7 @@ NTUT - Class - HomeWork
   - Martix 的操作 & 儲存在記憶體中的樣子
 建議自己實際操作 Mars 去跑一次追蹤 比較實在 
 
-## Mips 32 個 Register 用途
+### Mips 32 個 Register 用途
 |Name     |Register Number | 用途           |
 |:-------:|:--------------:|:---------------|
 |$Zero    |0               |硬體 0 |
@@ -25,3 +25,8 @@ NTUT - Class - HomeWork
 |$sp      |29              |stack pointer|
 |$fp      |30              |frame pointer|
 |$ra      |31              |return address|
+
+### Instructure Format
+|R-Type|OPcode|Rs|Rt|Rd|Shamt|Funct|
+|I-Type|OPcode|Rs|Rt|16-bits Immed|
+|J-Type|OPcode|26-bits address|
