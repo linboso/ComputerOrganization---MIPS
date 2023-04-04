@@ -33,3 +33,20 @@ NTUT - Class - HomeWork
 |I-Type|OPcode|Rs|Rt|X|X|16-bits Immed|
 |J-Type|OPcode|X|X|X|X|26-bits address|
 
+### 常見的 Instructure & 常見的用法
+|Instructure|        Format       |              解釋       |OPcode |Funct|  Binary   |
+|:---------:|---------------------|--------------------------|------ |-----|----------|
+|add        |add $t0, $t1, $t2    |$t0 = $t1 + $t2           |
+|sub        |sub $t0, $t1, $t2    |$t0 = $t1 - $t2           |   
+|lw         |lw $t0, _Const_($t3) |**去 Memory 裡 _Const_+$t3 之 MemoryAddress 取得 MemoryContent 後存入 $t0** |                     
+|sw         |sw $t3, _Const_($s4) |**把$t3裡的 Value 存入 _Const_+$s4 之MemoryAddress MemoryContent = $t3**    |           
+|and        |and $t0, $t1, $t2    |$t0 = $t1 and $t2          |    
+|or         |or $t0, $t1, $t2     |$t0 = $t1 or  $t2          |    
+|sll        |sll $t3, $s1, 2      |$t3 = $s1 << 2             |
+|addi       |addi $t4, $t1, -5    |$t4 = $t1 + (-5)           |   
+|beq        |beq $s1, $t3, LABEL  |If $s1 == $t3 than goto LABEL  |            
+|bne        |bne $s3, $s7, LABEL  |If $s3 != $t7 than goto LABEL  |               
+|slt        |slt $s0, $s1, $s2    |$s0 = $s1 < $s2 ? 1 : 0    |          
+|j          |j LABEL              |goto LABEL                 |      
+|jr         |jr $ra               |goto $ra 裡面所存的 address (固定用法)    |          
+|jal        |jal LABEL            |goto LABEL 且把 LABEL的下一行address 存入 $ra 中 |             
