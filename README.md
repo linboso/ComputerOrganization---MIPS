@@ -51,7 +51,7 @@ NTUT - Class - HomeWork
 |jr         |jr  $ra              |goto $ra 裡面所存的 address (固定用法)    |`**R**`|0|X|           
 |jal        |jal  `LABEL`         |goto LABEL 且把 LABEL的下一行address 存入 $ra 中 |J|3|X|              
 
-beq、bne、slt 可以交互組合形成不同的判斷方式 : < -- <= -- > -- >= 
+
 
 ### PseudoInstructure 虛擬指令
 |Instructure|        Format         |              解釋            |  MIPS指令            |
@@ -62,6 +62,6 @@ beq、bne、slt 可以交互組合形成不同的判斷方式 : < -- <= -- > -- 
 |**bgt**    |bgt $s0, $s1, `LABEL`  |If $s0 >  $s1 than goto LABEL |slt $t0, **$s1, $s0** <br />bne $t0, $zero, `LABEL` |
 |**bge**    |bge $s0, $s1, `LABEL`  |If $s0 >= $s1 than goto LABEL |slt $t0, $s0, $s1 <br />beq $t0, $zero, `LABEL` |
 |**ble**    |ble $s0, $s1, `LABEL`  |If $s0 <= $ts than goto LABEL |slt $t0, **$s1, $s0** <br />beq $t0, $zero, `LABEL` |
-
+ * beq、bne、slt 可以交互組合形成不同的判斷方式 : < -- <= -- > -- >= 
 
 
