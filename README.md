@@ -10,17 +10,17 @@ NTUT - Class - HomeWork
   - Martix 的操作 & 儲存在記憶體中的樣子
 建議自己實際操作 Mars 去跑一次追蹤 比較實在 
 
-|Name     |Register Number | 用途 |
-|:-------:|:--------------:|:-----|
-|$Zero    |
-|$at      |
-|$v0 - $v1|
-|$a0 - $a3|
-|$t0 - $t7|
-|$s0 - $s7|
-|$t8 - $t9|
-|$k0 - $k1|
-|$gp      |
-|$sp      |
-|$fp      |
-|$ra      |
+|Name     |Register Number | 用途           |
+|:-------:|:--------------:|:---------------|
+|$Zero    |0               |硬體 0 |
+|$at      |1               |保留給 Assembler用|
+|$v0 - $v1|2 - 3           |values for results & expression evaluation|
+|$a0 - $a3|4 - 7           |arguments (function/procedures)|
+|$t0 - $t7|8 - 15          |temporaries| 
+|$s0 - $s7|16 - 23         |saved|
+|$t8 - $t9|24 - 25         |more temp|
+|$k0 - $k1|26 - 27         |保留給OS使用|
+|$gp      |28              |global pointer|
+|$sp      |29              |stack pointer|
+|$fp      |30              |frame pointer|
+|$ra      |31              |return address|
