@@ -27,9 +27,9 @@ NTUT - Class - HomeWork
 |$ra      |31              |return address|
 
 ### Instructure Format
-|<>|<>|<>|<>|<>|<>|<>|
+|Tpye| 6 bits | 5 bits | 5 bits | 5 bits | 5 bits |X|
 |----|----|----|----|----|----|----|
-|R-Type|OPcode|Rs|Rt|Rd|Shamt|Funct|
+|R-Type|OPcode|Rs|Rt|Rd|Shamt|6-bits Funct|
 |I-Type|OPcode|Rs|Rt|X|X|16-bits Immed|
 |J-Type|OPcode|X|X|X|X|26-bits address|
 
