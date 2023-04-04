@@ -58,10 +58,10 @@ beq、bne、slt 可以交互組合形成不同的判斷方式 : < -- <= -- > -- 
 |:---------:|-----------------------|------------------------------|---------------------|
 |move       |move $t1, $s3          |$t1 == $s3                    |add $t1, $s3, $zero  |
 |clear      |clear $s2              |$s2 = 0                       |add $s2, $zero, $zero|
-|**blt**    |blt $s0, $s1, `LABEL`  |If $s0 <  $s1 than goto LABEL |slt $t0, $s0, $s1 <br\>bne $t0, $zero, `LABEL` |
-|**bgt**    |bgt $s0, $s1, `LABEL`  |If $s0 >  $s1 than goto LABEL |slt $t0, **$s1, $s0** <br\>bne $t0, $zero, `LABEL` |
-|**bge**    |bge $s0, $s1, `LABEL`  |If $s0 >= $s1 than goto LABEL |slt $t0, $s0, $s1 <br\>beq $t0, $zero, `LABEL` |
-|**ble**    |ble $s0, $s1, `LABEL`  |If $s0 <= $ts than goto LABEL |slt $t0, **$s1, $s0** <br\>beq $t0, $zero, `LABEL` |
+|**blt**    |blt $s0, $s1, `LABEL`  |If $s0 <  $s1 than goto LABEL |slt $t0, $s0, $s1 <br />bne $t0, $zero, `LABEL` |
+|**bgt**    |bgt $s0, $s1, `LABEL`  |If $s0 >  $s1 than goto LABEL |slt $t0, **$s1, $s0** <br />bne $t0, $zero, `LABEL` |
+|**bge**    |bge $s0, $s1, `LABEL`  |If $s0 >= $s1 than goto LABEL |slt $t0, $s0, $s1 <br />beq $t0, $zero, `LABEL` |
+|**ble**    |ble $s0, $s1, `LABEL`  |If $s0 <= $ts than goto LABEL |slt $t0, **$s1, $s0** <br />beq $t0, $zero, `LABEL` |
 
 
 
