@@ -27,6 +27,8 @@ NTUT - Class - HomeWork
 |$ra      |31              |return address|
 
 ### Instructure Format
+|a|b|c|
+|----|----|----|
 |R-Type|OPcode|Rs|Rt|Rd|Shamt|Funct|
 |I-Type|OPcode|Rs|Rt|16-bits Immed|
 |J-Type|OPcode|26-bits address|
