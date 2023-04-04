@@ -27,35 +27,9 @@ NTUT - Class - HomeWork
 |$ra      |31              |return address|
 
 ### Instructure Format
-||||||||
+|<>|<>|<>|<>|<>|<>|<>|
 |----|----|----|----|----|----|----|
 |R-Type|OPcode|Rs|Rt|Rd|Shamt|Funct|
-|I-Type|OPcode|Rs|Rt|||16-bits Immed|
-|J-Type|OPcode|||||26-bits address|
+|I-Type|OPcode|Rs|Rt|X|X|16-bits Immed|
+|J-Type|OPcode|X|X|X|X|26-bits address|
 
-<table>
-    <thead>
-        <tr>
-            <th>Layer 1</th>
-            <th>Layer 2</th>
-            <th>Layer 3</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan=4>L1 Name</td>
-            <td rowspan=2>L2 Name A</td>
-            <td>L3 Name A</td>
-        </tr>
-        <tr>
-            <td>L3 Name B</td>
-        </tr>
-        <tr>
-            <td rowspan=2>L2 Name B</td>
-            <td>L3 Name C</td>
-        </tr>
-        <tr>
-            <td>L3 Name D</td>
-        </tr>
-    </tbody>
-</table>
