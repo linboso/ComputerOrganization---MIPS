@@ -31,4 +31,4 @@ NTUT - Class - HomeWork
 |====|----|----|----|----|----|----|
 |R-Type|OPcode|Rs|Rt|Rd|Shamt|Funct|
 |I-Type|OPcode|Rs|Rt|||16-bits Immed|
-|J-Type|OPcode||^|||26-bits address|
+|J-Type|OPcode|||||26-bits address|
