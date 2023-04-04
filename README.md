@@ -48,5 +48,5 @@ NTUT - Class - HomeWork
 |bne        |bne $s3, $s7,`LABEL` |If $s3 != $t7 than goto LABEL  |I|5|X|              
 |slt        |slt $s0, $s1, $s2    |$s0 = $s1 < $s2 ? 1 : 0    |R|0|42|           
 |j          |j  `LABEL`           |goto LABEL                 |J|2|X|       
-|jr         |jr  $ra              |goto $ra 裡面所存的 address (固定用法)    |**R**|0|X|           
+|jr         |jr  $ra              |goto $ra 裡面所存的 address (固定用法)    |`**R**`|0|X|           
 |jal        |jal  `LABEL`         |goto LABEL 且把 LABEL的下一行address 存入 $ra 中 |J|3|X|              
