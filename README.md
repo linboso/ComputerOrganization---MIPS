@@ -1,5 +1,4 @@
 # ComputerOrganization---MIPS
-NTUT - Class - HomeWork
 
 如果想要執行 MIPS 要先去此 http://courses.missouristate.edu/kenvollmar/mars/ 
 下載 Mars MIPS模擬器
