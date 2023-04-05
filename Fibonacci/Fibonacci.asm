@@ -2,6 +2,7 @@
 dp: 	.word	0:100
 
 nLine: 	.asciiz "\r\n"
+sp:	.asciiz " ,"
 rfib: 	.asciiz " rFibonacci: "
 nefib:	.asciiz	"nrFibonacci: "
 dpfib:	.asciiz	"dpFibonacci: "
@@ -35,8 +36,41 @@ main:
   li $v0, 4
   la $a0, nLine
   syscall			# \r\n
+
+  ## DP-Fibonacci
+  li $a0, 9
+  la $a1, dp			# $a1 = dp[0] address
+  jal dpFibonacci
   
+  move $t0, $v0
+  li $v0, 4			#
+  la $a0, dpfib			#
+  syscall			# print nrFibonacci: 
+  li $v0, 1
+  move $a0, $t0
+  syscall			# result
+  li $v0, 4
+  la $a0, nLine
+  syscall			# \r\n 
+  ## --------------------------------------------
   
+  li $t0, 0
+  main_for:
+  slti $t1, $t0, 10
+  beqz $t1, main_Exit
+    sll $t1, $t0, 2
+    add $t1, $a1, $t1
+    lw $a0, 0($t1)
+    li $v0, 1
+    syscall
+    
+    li $v0, 4
+    la $a0, sp
+    syscall
+    addi $t0, $t0, 1
+    j main_for
+  main_Exit:
+  ##  
   li $v0, 10
   syscall			# Exit Program
  
@@ -87,6 +121,43 @@ nrFibonacci:
     jr $ra
     
     
+dpFibonacci:
+  sll $t0, $a0, 2
+  add $t0, $t0, $a1
+  lw $t1, 0($t0)		# $t0 = dp[n]
+  move $v0, $t1			# return dp[n]
+  beqz $t1, L1			# If dp[n] == 0 than goto ExitdpFib
+  jr $ra
+    L1:
+    sw $a0, 0($t0)		# dp[n] = n
+    move $v0, $a0		# return n
+    slti $t1, $a0, 2		# $t1 = $a0 < 2? 1: 0
+    beqz $t1, L2		# If n >= 2 than goto ExitdpFib
+    jr $ra
+        L2:
+      addi $sp, $sp, -12
+      sw $ra, 0($sp)
+      sw $a0, 4($sp)
+      
+      addi $a0, $a0, -1
+      jal dpFibonacci
+      sw $v0, 8($sp)
+      
+      addi $a0, $a0, -1
+      jal dpFibonacci
+      
+      lw $t0, 8($sp)
+      add $v0, $v0, $t0		# tmp = fib(n-1) + fib(n-2)
+      
+      addi $t0, $a0, 2
+      sll $t0, $t0, 2
+      add $t0, $t0, $a1
+      sw $v0, 0($t0)		# dp[n] = fib(n-1) + fib(n-2)
+      	
+      lw $a0, 4($sp)
+      lw $ra, 0($sp)
+      addi $sp, $sp, 12
+      jr $ra
     
     
     

@@ -23,17 +23,26 @@ int nrFibonacci(int n){
 int dp[100];
 int dpFibonacci(int n){
     if(dp[n] != 0) return dp[n];
-    if(n < 2) return n;
-    else return dpFibonacci(n-1) + dpFibonacci(n-2);
+    if(n < 2){
+        dp[n] = n;
+        return n;
+    }else{
+        dp[n] = dpFibonacci(n-1) + dpFibonacci(n-2);
+        return dp[n];
+    } 
 }
 
 
 
 int main(){
 
-    printf(" rFibonacci: %d\r\n", rFibonacci(9));
+    printf(" rFibonacci: %d\r\n",  rFibonacci(9));
     printf("nrFibonacci: %d\r\n", nrFibonacci(9));
     printf("dpFibonacci: %d\r\n", dpFibonacci(9));
+
+    for(int i=0; i<10; i++){
+        printf("%d, ", dp[i]);
+    }
     return 0;
     
 }
