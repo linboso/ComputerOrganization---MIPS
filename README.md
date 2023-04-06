@@ -33,12 +33,12 @@
 |J-Type|OPcode|X|X|X|X|26-bits address|
 
 ### 常見的 Instructure & 常見的用法
-|Instructure|        Format       |              解釋       |Format |OPcode|  Funct   |
-|:---------:|---------------------|--------------------------|:------:|:-----:|:-----:|
+|Inst    |        Format       |              解釋        |Type    |OPcode |Funct  |
+|:------:|---------------------|--------------------------|:------:|:-----:|:-----:|
 |add        |add $t0, $t1, $t2    |$t0 = $t1 + $t2           |R|0|32|
 |sub        |sub $t0, $t1, $t2    |$t0 = $t1 - $t2           |R|0|34|
-|lw         |lw $t0, _Const_($t3) |**去 Memory 裡 _Const_+$t3 之 MemoryAddress 取得 MemoryContent 後存入 $t0** |I|35|X|                     
-|sw         |sw $t3, _Const_($s4) |**把$t3裡的 Value 存入 _Const_+$s4 之MemoryAddress MemoryContent = $t3**    |I|43|X|       
+|lw         |lw $t0, _Offset_($t3) |**去 Memory 裡 _Offset_+$t3 之 MemoryAddress 取得 MemoryContent 後存入 $t0** |I|35|X|                     
+|sw         |sw $t3, _Offset_($s4) |**把$t3裡的 Value 存入 _Offset_+$s4 之MemoryAddress MemoryContent = $t3**    |I|43|X|       
 |and        |and $t0, $t1, $t2    |$t0 = $t1 and $t2          |R|0|36|    
 |or         |or $t0, $t1, $t2     |$t0 = $t1 or  $t2          |R|0|37|    
 |sll        |sll $t3, $s1, 2      |$t3 = $s1 << 2             |R|0|0|
