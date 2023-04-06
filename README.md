@@ -49,7 +49,12 @@
 |j          |j  `LABEL`           |goto LABEL                 |J|2|X|       
 |jr         |jr  $ra              |goto $ra 裡面所存的 address (固定用法)    |`**R**`|0|X|           
 |jal        |jal  `LABEL`         |goto LABEL 且把 LABEL的下一行address 存入 $ra 中 |J|3|X|              
-
+- 除了 lw、sw 還有
+  - lb、sb : "byte"        8bits
+  - lh、sh : "half word"   16bits
+  - ld、sd : "double word" 64bits
+  - li : load immed 
+  - la : load address
 
 
 ### PseudoInstructure 虛擬指令
